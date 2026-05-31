@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Windows123</title>
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI, Arial;
+background:#0b0b0b;
+color:white;
+}
+
+/* TOPBAR */
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 25px;
+background:rgba(20,20,20,0.9);
+backdrop-filter: blur(10px);
+border-bottom:1px solid #222;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:bold;
+color:#2d7dff;
+}
+
+.logo img{
+width:34px;
+height:34px;
+border-radius:6px;
+}
+
+/* FIXED LANGUAGE BUTTON (NO SIZE CHANGE) */
+.langBtn{
+width:70px;
+text-align:center;
+cursor:pointer;
+padding:7px 0;
+border:1px solid #333;
+border-radius:8px;
+background:#1a1a1a;
+font-weight:bold;
+transition:0.2s;
+}
+
+.langBtn:hover{
+border-color:#2d7dff;
+color:#2d7dff;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:120px 20px;
+background:radial-gradient(circle,#1a1a1a,#0b0b0b);
+}
+
+.hero h1{
+font-size:70px;
+margin:0;
+}
+
+.hero p{
+color:#aaa;
+font-size:18px;
+}
+
+/* BUTTONS */
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 24px;
+background:#2d7dff;
+color:white;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+transition:0.2s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* SECTIONS */
+.section{
+max-width:1100px;
+margin:auto;
+padding:40px 25px;
+}
+
+.card{
+background:rgba(25,25,25,0.9);
+padding:25px;
+border-radius:14px;
+border:1px solid #222;
+margin-top:20px;
+backdrop-filter: blur(8px);
+}
+
+h2{
+color:#2d7dff;
+}
+
+/* APPS */
+.apps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:15px;
+}
+
+.app{
+background:#0f0f0f;
+border:1px solid #222;
+padding:18px;
+border-radius:12px;
+text-align:center;
+font-size:18px;
+transition:0.2s;
+}
+
+.app:hover{
+transform:scale(1.05);
+border-color:#2d7dff;
+}
+
+.app small{
+display:block;
+margin-top:5px;
+font-size:12px;
+color:#aaa;
+font-weight:bold;
+}
+
+/* FEATURES */
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.feature{
+background:#111;
+padding:18px;
+border-radius:12px;
+border:1px solid #222;
+}
+
+/* STORY */
+#storyPanel{
+display:none;
+}
+
+.backBtn{
+width:160px;
+display:inline-block;
+margin-top:15px;
+padding:12px 0;
+background:#2d7dff;
+color:white;
+border-radius:8px;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+color:#666;
+border-top:1px solid #222;
+margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP -->
+<div class="topbar">
+
+<div class="logo">
+<img src="https://sirtros.github.io/Windows-123-OS-1/Pictures/SirTros-logo.png">
+Windows123
+</div>
+
+<div class="langBtn" onclick="toggleLang()">
+🌐 <span id="langBtnText">EN</span>
+</div>
+
+</div>
+
+<!-- MAIN -->
+<div id="mainContent">
+
+<!-- HERO -->
+<div class="hero">
+<h1>Windows123</h1>
+<p id="subtitle">Web OS Project • Windows 10 / 11 experience</p>
+
+<a class="btn" href="Windows123.zip" download id="downloadBtn">
+⬇ Download ZIP package
+</a>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+<div class="card">
+<h2 id="featTitle">✨ Features</h2>
+
+<div class="features">
+<div class="feature" id="f1">⚡ Fast web OS UI</div>
+<div class="feature" id="f2">🪟 Windows-like design</div>
+<div class="feature" id="f3">📱 Built-in apps system</div>
+<div class="feature" id="f4">💾 ZIP download system</div>
+<div class="feature" id="f5">📟 Terminal simulation</div>
+<div class="feature" id="f6">🎨 Modern dark UI</div>
+</div>
+
+</div>
+</div>
+
+<!-- APPS -->
+<div class="section">
+<div class="card">
+<h2 id="appsTitle">📱 Applications</h2>
+
+<div class="apps">
+<div class="app">📁<small>FILES</small></div>
+<div class="app">📄<small>NOTEPAD</small></div>
+<div class="app">🧮<small>CALCULATOR</small></div>
+<div class="app">🎨<small>PAINT</small></div>
+<div class="app">📟<small>TERMINAL</small></div>
+<div class="app">🕒<small>CLOCK</small></div>
+</div>
+
+</div>
+</div>
+
+<!-- STORY PREVIEW -->
+<div class="section">
+<div class="card">
+<h2 id="storyTitle">📖 Project story</h2>
+
+<p id="shortStory">
+Windows123 started as a simple experiment to build a Windows-like environment in the browser.
+</p>
+
+<div class="backBtn" onclick="showStory()" id="readBtn">
+📖 Read more
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- STORY PANEL -->
+<div id="storyPanel">
+
+<div class="section">
+<div class="card">
+
+<h2 id="fullStoryTitle">📖 Full story</h2>
+
+<p id="s1"></p>
+<p id="s2"></p>
+<p id="s3"></p>
+<p id="s4"></p>
+<p id="s5"></p>
+<p id="s6"></p>
+<p id="s7"></p>
+<p id="s8"></p>
+<p id="s9"></p>
+<p id="s10"></p>
+<p id="s11"></p>
+<p id="s12"></p>
+<p id="s13"></p>
+<p id="s14"></p>
+<p id="s15"></p>
+
+<div class="backBtn" onclick="hideStory()" id="backBtn">← Back</div>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+© SirTros - Windows123
+</footer>
+
+<script>
+
+let lang = "cs";
+
+function detectLang(){
+let saved = localStorage.getItem("lang");
+if(saved){ lang = saved; return; }
+
+let b = navigator.language;
+lang = (b.startsWith("cs") || b.startsWith("sk")) ? "cs" : "en";
+
+localStorage.setItem("lang", lang);
+}
+
+/* FIX BUTTON STABILITY */
+function updateButton(){
+document.getElementById("langBtnText").innerText =
+(lang === "cs") ? "EN" : "CZ";
+}
+
+/* APPLY */
+function apply(){
+
+updateButton();
+
+/* HERO */
+document.getElementById("subtitle").innerText =
+(lang === "cs")
+? "Webový OS projekt • Windows 10 / 11"
+: "Web OS project • Windows 10 / 11 experience";
+
+document.getElementById("downloadBtn").innerText =
+(lang === "cs")
+? "⬇ Stáhnout ZIP balíček"
+: "⬇ Download ZIP package";
+
+/* FEATURES */
+document.getElementById("featTitle").innerText =
+(lang === "cs") ? "✨ Funkce" : "✨ Features";
+
+let fcs = [
+"⚡ Rychlé webové prostředí",
+"🪟 Windows design styl",
+"📱 Aplikace systém",
+"💾 ZIP download",
+"📟 Terminál simulace",
+"🎨 Moderní UI"
+];
+
+let fen = [
+"⚡ Fast web environment",
+"🪟 Windows-like design",
+"📱 App system",
+"💾 ZIP download",
+"📟 Terminal simulation",
+"🎨 Modern UI"
+];
+
+for(let i=1;i<=6;i++){
+document.getElementById("f"+i).innerText =
+(lang === "cs") ? fcs[i-1] : fen[i-1];
+}
+
+/* APPS */
+document.getElementById("appsTitle").innerText =
+(lang === "cs") ? "📱 Aplikace" : "📱 Applications";
+
+let apps = document.querySelectorAll(".app small");
+let cs = ["Soubory","Poznámky","Kalkulačka","Malování","Terminál","Hodiny"];
+let en = ["Files","Notepad","Calculator","Paint","Terminal","Clock"];
+
+for(let i=0;i<apps.length;i++){
+apps[i].innerText = (lang === "cs") ? cs[i] : en[i];
+}
+
+/* STORY */
+document.getElementById("storyTitle").innerText =
+(lang === "cs") ? "📖 Příběh projektu" : "📖 Project story";
+
+document.getElementById("shortStory").innerText =
+(lang === "cs")
+? "Windows123 vznikl jako experiment vytvořit Windows-like prostředí v prohlížeči."
+: "Windows123 started as an experiment to build a Windows-like environment in the browser.";
+
+document.getElementById("readBtn").innerText =
+(lang === "cs") ? "📖 Číst dále" : "📖 Read more";
+
+document.getElementById("fullStoryTitle").innerText =
+(lang === "cs") ? "📖 Celý příběh" : "📖 Full story";
+
+/* STORY TEXT */
+let csStory = [
+"Windows123 vznikl jako malý webový experiment.",
+"Cílem bylo vytvořit Windows-like prostředí.",
+"Začalo to jen HTML stránkou.",
+"Postupně vznikly aplikace.",
+"Systém se rozšířil o design oken.",
+"Přibyl download ZIP systém.",
+"Instalátor simuluje instalaci.",
+"Projekt se stále vyvíjí.",
+"Je to experimentální web OS.",
+"Každá verze přidává nové funkce.",
+"UI je inspirováno Windows 10/11.",
+"Vše běží v prohlížeči.",
+"Bez instalace systému.",
+"Budoucnost je otevřená.",
+"Windows123 je kreativní projekt."
+];
+
+let enStory = [
+"Windows123 started as a small web experiment.",
+"The goal was to create a Windows-like environment.",
+"It began as a simple HTML page.",
+"Later apps were added.",
+"The system gained window design.",
+"A ZIP download system was added.",
+"The installer simulates setup.",
+"The project is still evolving.",
+"It is an experimental web OS.",
+"Each version adds new features.",
+"The UI is inspired by Windows 10/11.",
+"It runs entirely in browser.",
+"No system installation needed.",
+"The future is open.",
+"Windows123 is a creative project."
+];
+
+for(let i=1;i<=15;i++){
+document.getElementById("s"+i).innerText =
+(lang === "cs") ? csStory[i-1] : enStory[i-1];
+}
+
+/* BACK */
+document.getElementById("backBtn").innerText =
+(lang === "cs") ? "← Zpět" : "← Back";
+}
+
+/* LANG SWITCH */
+function toggleLang(){
+lang = (lang === "cs") ? "en" : "cs";
+localStorage.setItem("lang", lang);
+apply();
+}
+
+/* STORY */
+function showStory(){
+document.getElementById("mainContent").style.display = "none";
+document.getElementById("storyPanel").style.display = "block";
+window.scrollTo(0,0);
+}
+
+function hideStory(){
+document.getElementById("storyPanel").style.display = "none";
+document.getElementById("mainContent").style.display = "block";
+window.scrollTo(0,0);
+}
+
+/* INIT */
+detectLang();
+window.onload = apply;
+
+</script>
+
+</body>
+</html>
